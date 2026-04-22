@@ -59,12 +59,12 @@ function Trades() {
     Trade Entry
   </h5>
 
-  {/* INNER CARD (no title inside) */}
+  {/* INNER CARD */}
   <div className="card border-0 shadow-sm p-4">
 
     <form onSubmit={handleSubmit}>
 
-    {/* SECTION 1: TRADE TYPE */}
+    {/* TRADE TYPE */}
     <div className="mb-4 d-flex align-items-center gap-4">
       <label className="fw-semibold" style={{ width: "140px" }}>
         Trade Type
@@ -95,7 +95,7 @@ function Trades() {
 
     <hr />
 
-    {/* SECTION 2: INPUT FIELDS */}
+    {/* INPUT FIELDS */}
     <div className="row g-3">
 
       <div className="col-md-6 d-flex align-items-center">
@@ -137,7 +137,7 @@ function Trades() {
 
     <hr />
 
-    {/* SECTION 3: OUTCOME + STRATEGY + BUTTON */}
+    {/* OUTCOME + STRATEGY + BUTTON */}
     <div className="row g-3 align-items-center">
 
       <div className="col-md-6 d-flex align-items-center">
