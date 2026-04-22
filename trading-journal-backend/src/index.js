@@ -107,7 +107,7 @@ app.post("/trades", async (req, res) => {
           : (entry_price - stop_loss) * quantity;
     }
 
-    // ✅ CLEAN DATE STORAGE
+    // CLEAN DATE STORAGE
     const tradeDate = date || new Date().toISOString().split("T")[0];
 
     const result = await pool.query(

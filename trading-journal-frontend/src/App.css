@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  background: #b9b2d4;
+}
+
+.app-container {
+  display: flex;
+}
+
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  padding: 20px;
+  background: linear-gradient(180deg, #f3f0ff 0%, #ffffff 100%);
+  border-right: 1px solid #e5e7eb;
+  min-height: 100vh;
+}
+
+/* Logo */
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Search */
+.search-box {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.menu-item {
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #374151;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.menu-item:hover {
+  background: #e9e5ff;
+}
+
+/* Active */
+.menu-item.active {
+  background: #e0dcff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  background: #f3f0ff;
+  min-height: 100vh;
+}
+/* Softer inner card */
+.card.shadow-sm {
+  border-radius: 16px;
+}
+
+/* Section divider (lighter + subtle) */
+.section-divider {
+  height: 1px;
+  background: #e9e9ef; /* lighter than default */
+  opacity: 0.7;
+}
+
+/* Increase vertical rhythm slightly */
+.form-control {
+  padding: 10px 12px;
+}
+
+label {
+  color: #4b5563; /* softer label color */
+}
+
+/* Give inputs breathing space from labels */
+.d-flex.align-items-center label {
+  margin-right: 10px;
+}
+
+/* Slightly soften inner card shadow */
+.card.border-0.shadow-sm {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
