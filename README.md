@@ -23,15 +23,15 @@ npm install
 npm run dev
 
 ## Database Setup
-# Open PostgreSQL
+1. Open PostgreSQL
 
-# Create Database
+2. Create Database
 CREATE DATABASE trading_journal;
 
-# Connect to database
+3. Connect to database
 \c trading_journal
 
-# Run Tables
+4. Run Tables
 CREATE TABLE strategies (
   id SERIAL PRIMARY KEY,
   name TEXT UNIQUE NOT NULL,
