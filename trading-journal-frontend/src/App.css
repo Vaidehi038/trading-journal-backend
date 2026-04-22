@@ -71,33 +71,29 @@ body {
   background: #f3f0ff;
   min-height: 100vh;
 }
-/* Softer inner card */
+/* inner card */
 .card.shadow-sm {
   border-radius: 16px;
 }
 
-/* Section divider (lighter + subtle) */
 .section-divider {
   height: 1px;
-  background: #e9e9ef; /* lighter than default */
+  background: #e9e9ef; 
   opacity: 0.7;
 }
 
-/* Increase vertical rhythm slightly */
 .form-control {
   padding: 10px 12px;
 }
 
 label {
-  color: #4b5563; /* softer label color */
+  color: #4b5563;
 }
 
-/* Give inputs breathing space from labels */
 .d-flex.align-items-center label {
   margin-right: 10px;
 }
 
-/* Slightly soften inner card shadow */
 .card.border-0.shadow-sm {
   box-shadow: 0 6px 18px rgba(0,0,0,0.04);
 }
