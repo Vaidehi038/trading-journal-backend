@@ -95,17 +95,17 @@ app.post("/trades", async (req, res) => {
 
     let pnl = 0;
 
-    if (outcome === "successful") {
-      pnl =
-        trade_type === "long"
-          ? (target_price - entry_price) * quantity
-          : (entry_price - target_price) * quantity;
-    } else {
-      pnl =
-        trade_type === "long"
-          ? (stop_loss - entry_price) * quantity
-          : (entry_price - stop_loss) * quantity;
-    }
+if (outcome === "Successful") {
+  pnl =
+    trade_type === "Long"
+      ? (target_price - entry_price) * quantity
+      : (entry_price - target_price) * quantity;
+} else {
+  pnl =
+    trade_type === "Long"
+      ? (stop_loss - entry_price) * quantity
+      : (entry_price - stop_loss) * quantity;
+}
 
     // CLEAN DATE STORAGE
     const tradeDate = date || new Date().toISOString().split("T")[0];

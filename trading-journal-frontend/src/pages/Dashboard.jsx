@@ -65,10 +65,13 @@ function Dashboard() {
 
       {/* Table */}
       <div className="mt-5">
-        <h5 className="fw-semibold mb-3">Recent Trades</h5>
+        <div className="card shadow-sm border-0 p-4">
 
-        <div className="card shadow-sm border-0">
+        <h5 className="fw-semibold mb-3 text-center">Recent Trades</h5>
+
+        <div className="card shadow-sm border-0 p-4">
           <div className="table-responsive">
+            <div className="table-scroll">
             <table className="table align-middle mb-0">
 
               <thead className="table-light">
@@ -119,10 +122,11 @@ function Dashboard() {
               </tbody>
 
             </table>
+            </div>
           </div>
         </div>
       </div>
-
+    </div>            
     </div>
   );
 }

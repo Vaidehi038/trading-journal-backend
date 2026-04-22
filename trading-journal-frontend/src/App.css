@@ -103,6 +103,7 @@ label {
   max-height: 300px;  
   overflow-y: auto;
   padding-right: 5px;
+  width: 100%;
 }
 .table-scroll thead {
   position: sticky;
