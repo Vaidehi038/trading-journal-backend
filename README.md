@@ -32,6 +32,7 @@ CREATE DATABASE trading_journal;
 \c trading_journal
 
 4. Run Tables
+
 CREATE TABLE strategies (
   id SERIAL PRIMARY KEY,
   name TEXT UNIQUE NOT NULL,
