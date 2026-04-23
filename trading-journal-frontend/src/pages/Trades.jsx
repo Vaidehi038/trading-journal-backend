@@ -31,9 +31,24 @@ function Trades() {
     });
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
+   if (!form.ticker || !form.quantity || !form.entry_price || !form.strategy_id) {
+  alert("Please fill all required fields");
+  return;
+}
 
+
+if (form.outcome === "Successful" && !form.target_price) {
+  alert("Target price is required for successful trade");
+  return;
+}
+
+if (form.outcome === "Unsuccessful" && !form.stop_loss) {
+  alert("Stop loss is required for unsuccessful trade");
+  return;
+}
     fetch("http://localhost:3001/trades", {
       method: "POST",
       headers: {
@@ -44,7 +59,21 @@ function Trades() {
       .then(res => res.json())
       .then(() => {
         alert("Trade added successfully");
+        setForm({
+              date: "",
+              ticker: "",
+              stock_name: "",
+              trade_type: "Long",
+              quantity: "",
+              entry_price: "",
+              stop_loss: "",
+              target_price: "",
+              outcome: "Successful",
+              strategy_id: ""
+        });
+        
       });
+      
   };
 
   return (
@@ -98,44 +127,82 @@ function Trades() {
     {/* INPUT FIELDS */}
     <div className="row g-3">
 
-      <div className="col-md-6 d-flex align-items-center">
-        <label style={{ width: "140px" }}>Date</label>
-        <input type="date" className="form-control" name="date" onChange={handleChange} />
-      </div>
+  <div className="col-md-6 d-flex align-items-center">
+    <label style={{ width: "140px" }}>Date</label>
+    <input type="date" className="form-control" name="date" value={form.date} onChange={handleChange} />
+  </div>
 
-      <div className="col-md-6 d-flex align-items-center">
-        <label style={{ width: "140px" }}>Quantity</label>
-        <input type="number" className="form-control" name="quantity" onChange={handleChange} />
-      </div>
+  <div className="col-md-6 d-flex align-items-center">
+    <label style={{ width: "140px" }}>Quantity</label>
+    <input
+      type="number"
+      className="form-control"
+      name="quantity"
+      value={form.quantity}
+      onChange={handleChange}
+      required
+    />
+  </div>
 
-      <div className="col-md-6 d-flex align-items-center">
-        <label style={{ width: "140px" }}>Ticker</label>
-        <input className="form-control" name="ticker" onChange={handleChange} />
-      </div>
+  <div className="col-md-6 d-flex align-items-center">
+    <label style={{ width: "140px" }}>Ticker</label>
+    <input
+      className="form-control"
+      name="ticker"
+      value={form.ticker}
+      onChange={handleChange}
+      required
+    />
+  </div>
 
-      <div className="col-md-6 d-flex align-items-center">
-        <label style={{ width: "140px" }}>Stock Name</label>
-        <input className="form-control" name="stock_name" onChange={handleChange} />
-      </div>
+  <div className="col-md-6 d-flex align-items-center">
+    <label style={{ width: "140px" }}>Stock Name</label>
+    <input
+      className="form-control"
+      name="stock_name"
+      value={form.stock_name}
+      onChange={handleChange}
+      required
+    />
+  </div>
 
-      <div className="col-md-6 d-flex align-items-center">
-        <label style={{ width: "140px" }}>Stop Loss</label>
-        <input type="number" className="form-control" name="stop_loss" onChange={handleChange} />
-      </div>
+  <div className="col-md-6 d-flex align-items-center">
+    <label style={{ width: "140px" }}>Stop Loss</label>
+    <input
+      type="number"
+      className="form-control"
+      name="stop_loss"
+      value={form.stop_loss}
+      onChange={handleChange}
+      required
+    />
+  </div>
 
-      <div className="col-md-6 d-flex align-items-center">
-        <label style={{ width: "140px" }}>Entry Price</label>
-        <input type="number" className="form-control" name="entry_price" onChange={handleChange} />
-      </div>
+  <div className="col-md-6 d-flex align-items-center">
+    <label style={{ width: "140px" }}>Entry Price</label>
+    <input
+      type="number"
+      className="form-control"
+      name="entry_price"
+      value={form.entry_price}
+      onChange={handleChange}
+      required
+    />
+  </div>
 
-      <div className="col-md-6 d-flex align-items-center">
-        <label style={{ width: "140px" }}>Target Price</label>
-        <input type="number" className="form-control" name="target_price" onChange={handleChange} />
-      </div>
+  <div className="col-md-6 d-flex align-items-center">
+    <label style={{ width: "140px" }}>Target Price</label>
+    <input
+      type="number"
+      className="form-control"
+      name="target_price"
+      value={form.target_price}
+      onChange={handleChange}
+      required
+    />
+  </div>
 
-    </div>
-
-    <hr />
+</div>
 
     {/* OUTCOME + STRATEGY + BUTTON */}
     <div className="row g-3 align-items-center">
